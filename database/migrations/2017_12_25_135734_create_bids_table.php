@@ -19,7 +19,7 @@ class CreateBidsTable extends Migration
             $table->integer('year');
             $table->float('width');
             $table->float('height');
-            $table->float('depth');
+            $table->float('depth')->nullable();
             $table->date('end_date');
             $table->text('description');
             $table->text('condition');
@@ -33,6 +33,7 @@ class CreateBidsTable extends Migration
             $table->string('auction_title');
             $table->string('style');
             $table->string('origin');
+            $table->softDeletes();
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
