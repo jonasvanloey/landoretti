@@ -1,0 +1,111 @@
+body {
+  margin: 0; }
+
+.wrapper {
+  width: 900px;
+  margin: 0 auto; }
+
+.top-nav ul {
+  list-style: none;
+  margin: 0; }
+  .top-nav ul li {
+    float: left;
+    text-decoration: none;
+    padding: 10px 15px; }
+.top-nav a {
+  text-decoration: none; }
+
+.bottom-nav {
+  background-color: #eaeaea; }
+  .bottom-nav img {
+    width: 100px;
+    float: left; }
+  .bottom-nav nav {
+    width: 70%;
+    float: left;
+    height: inherit; }
+    .bottom-nav nav ul {
+      list-style: none;
+      margin: 0; }
+      .bottom-nav nav ul li {
+        float: left;
+        padding: 10px 15px; }
+    .bottom-nav nav a {
+      text-decoration: none; }
+  .bottom-nav .lang {
+    width: 20%;
+    float: right; }
+    .bottom-nav .lang ul {
+      list-style: none;
+      margin: 0; }
+      .bottom-nav .lang ul li {
+        float: right;
+        text-decoration: none;
+        padding: 10px 10px; }
+    .bottom-nav .lang a {
+      text-decoration: none; }
+
+.bottom-line {
+  height: 5px;
+  background-color: #009e9c; }
+
+h1 {
+  text-align: center; }
+
+.landing {
+  background: url("../img/Kunst.png") center no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 850px;
+  position: relative; }
+
+.landingwr {
+  position: absolute;
+  left: 26.5%;
+  top: 70%; }
+
+.blue {
+  padding: 10px;
+  background-color: rgba(1, 32, 166, 0.65);
+  display: block;
+  color: white; }
+
+.hdiw {
+  text-align: center; }
+
+.icon {
+  width: 117px;
+  margin: 0 auto;
+  height: 117px;
+  background-color: #009e9c;
+  border-radius: 10px;
+  text-align: center; }
+
+.highlight {
+  background-color: #eaeaea; }
+
+.search {
+  background: url("../img/plaat.png") center no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+.block {
+  margin: 120px 0; }
+
+.white {
+  background-color: white;
+  color: #009e9c;
+  width: 100%;
+  padding: 10px; }
+
+.prodimage {
+  width: 100%; }
+
+.cfx {
+  clear: both; }
+
+/*# sourceMappingURL=index.css.map */

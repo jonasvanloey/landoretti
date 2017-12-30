@@ -1,0 +1,169 @@
+$logowidth:100px;
+$screenwidth:900px;
+$menupadding:10px 15px;
+//colors
+
+$primary:#ffffff;
+$secondary:#eaeaea;
+$accent:#009e9c;
+$detail:rgba(1,32,166,0.65);
+
+$text3:white;
+
+
+
+
+//mixins
+
+
+body{
+  margin:0;
+}
+.wrapper{
+  width: $screenwidth;
+  margin: 0 auto;
+}
+
+
+//NAVIGATION
+
+li{
+
+}
+
+.top-nav{
+  ul{
+    list-style: none;
+    margin: 0;
+    li{
+      float: left;
+      text-decoration: none;
+      padding: $menupadding;
+    }
+  }
+  a{
+    text-decoration: none;
+  }
+
+}
+.bottom-nav{
+  background-color:$secondary;
+  img{
+    width: $logowidth;
+    float: left;
+  }
+  nav{
+    width:70%;
+    float: left;
+    height: inherit;
+    ul {
+      list-style: none;
+      margin: 0;
+
+      li{
+        float: left;
+
+        padding: $menupadding;
+      }
+    }
+    a{
+      text-decoration: none;
+    }
+  }
+  .lang{
+    width:20%;
+    float: right;
+    ul{
+      list-style: none;
+      margin: 0;
+
+      li{
+        float: right;
+        text-decoration: none;
+        padding: 10px 10px;
+      }
+    }
+    a{
+      text-decoration: none;
+    }
+
+  }
+}
+//Footer
+
+.bottom-line{
+  height: 5px;
+  background-color: $accent;
+}
+
+//LANDING
+h1{
+  text-align: center;
+}
+.landing{
+  background:url("../img/Kunst.png")center no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 850px;
+  position: relative;
+
+}
+.landingwr{
+  position: absolute;
+  left:26.5%;
+  top:70%;
+}
+
+.blue{
+  padding:10px;
+  background-color: $detail;
+  display: block;
+  color: $text3;
+
+}
+.hdiw{
+  text-align: center;
+}
+
+.icon{
+  width:117px;
+  margin: 0 auto;
+  height:117px;
+  background-color: $accent;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.highlight{
+  background-color: $secondary;
+
+}
+
+//SEARCH
+
+.search{
+  background: url("../img/plaat.png")center no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.block{
+  margin:120px 0;
+}
+.white{
+  background-color: white;
+  color: $accent;
+  width: 100%;
+  padding: 10px;
+}
+//ART
+.prodimage{
+  width:100%;
+}
+
+.cfx{
+  clear: both;
+}
