@@ -47,7 +47,7 @@
                     <hr>
                     <p>Estimated price</p>
                     <h4>€{{$bid->min_est_price}} - €{{$bid->max_est_price}}</h4>
-                    <a href="">
+                    <a href="/art/{{$bid->id}}/buy">
                         <h5>Buy now for €{{$bid->buyout_price}}</h5>
                     </a>
                     {!!  Form::open(['url' => '/art/'.$bid->id.'/bid','method' => 'post']) !!}

@@ -21,11 +21,15 @@ Route::get('/myauctions', function () {
     return view('myauctions/index');
 });
 Route::get('/art','ArtController@index');
+Route::get('/watchlist','watchlistController@index');
 Route::get('/art/add','ArtController@add');
 Route::post('/art/store','ArtController@store');
 Route::get('/art/watchlist/{id}','ArtController@addToWatchlist');
 Route::get('/art/{bid}','ArtController@detail');
 Route::post('/art/{id}/bid','BidController@makebid');
+Route::get('/art/{id}/buy','BidController@buynow');
+Route::get('/watchlist/delete','watchlistController@delete');
+Route::get('/watchlist/deleteall','watchlistController@deleteall');
 
 Auth::routes();
 

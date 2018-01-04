@@ -378,7 +378,7 @@
                     </div>
                 </div>
                 {!! Form::submit('Submit') !!}
-                {!! Form::close() !!}
+
             </div>
         </div>
     </section>

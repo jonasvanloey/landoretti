@@ -48,7 +48,7 @@
                 <li><a href="{{url('login')}}"><span></span>login</a></li>
                 <li><a href="{{url('register')}}"><span></span>Register</a></li>
                 @else
-                    <li><a href="#"><span></span>watchlist</a></li>
+                    <li><a href="/watchlist"><span></span>watchlist</a></li>
                     <li><a href="#"><span></span>profile</a></li>
                     <li><a href="#"><span></span>logout</a></li>
                     @endguest
