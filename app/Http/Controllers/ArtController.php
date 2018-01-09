@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\DB;
 class ArtController extends Controller
 {
     public function index(){
-        $bids = DB::table('bids')->where('deleted_at',NULL)->orderBy('updated_at')->get();
+        $bids = DB::table('bids')->where('deleted_at',NULL)->where('approved',1)->orderBy('updated_at')->get();
         return view('art.index',compact('bids'));
     }
     public function add(){

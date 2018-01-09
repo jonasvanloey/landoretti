@@ -17,9 +17,7 @@ Route::get('/', function () {
 Route::get('/isearch', function () {
     return view('Search/index');
 });
-Route::get('/myauctions', function () {
-    return view('myauctions/index');
-});
+Route::get('/myauctions', 'auctionController@index');
 Route::get('/art','ArtController@index');
 Route::get('/watchlist','watchlistController@index');
 Route::get('/art/add','ArtController@add');

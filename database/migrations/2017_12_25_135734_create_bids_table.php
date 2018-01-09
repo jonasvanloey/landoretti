@@ -24,6 +24,9 @@ class CreateBidsTable extends Migration
             $table->text('description');
             $table->text('condition');
             $table->boolean('is_active')->default(1);
+            $table->boolean('pending')->default(1);
+            $table->boolean('sold')->default(0);
+            $table->boolean('approved')->nullable()->default(null);
             $table->float('min_est_price');
             $table->float('max_est_price');
             $table->float('buyout_price');
