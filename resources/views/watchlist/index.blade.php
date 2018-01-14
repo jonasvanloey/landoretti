@@ -25,6 +25,7 @@
                 <div class="col-lg-12">
                     <h1>watchlist</h1>
                 </div>
+                <div class="col-lg-12"><a href="/watchlist">all</a> | <a href="?active">active</a> | <a href="?ended">ended</a></div>
             </div>
             {!!  Form::open(['url' => '/watchlist/delete','method' => 'get']) !!}
             <div class="row">

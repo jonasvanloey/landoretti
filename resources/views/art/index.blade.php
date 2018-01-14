@@ -32,13 +32,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-10">
-                    <h2>Bids</h2>
-                </div>
-                <div class="col-lg-2">
-                    <a href="{{url('art/add')}}"><button>add new bid</button></a>
-
-                </div>
+                <div class="col-lg-12"><b>Sort By:</b><a href="?ending=soonest">ending soonest</a><a href="?ending=latest">ending latest</a><a href="?new_auctions">new auctions</a><a href="?popular_auctions">popular auctions</a></div>
             </div>
             <div class="row">
                 <div class="col-lg-12">filter here</div>

@@ -26,6 +26,7 @@ class BidController extends Controller
             'bid_price'=>$id->buyout_price,
             'bid_id'=>$id->id
         ]);
+        Bid::where('id',$id->id)->update('is_active',0);
         $title = $id->auction_title;
         $id->delete();
         return view('art.thank',compact('title'));

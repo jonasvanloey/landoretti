@@ -12,8 +12,32 @@ use Illuminate\Support\Facades\DB;
 class ArtController extends Controller
 {
     public function index(){
-        $bids = DB::table('bids')->where('deleted_at',NULL)->where('approved',1)->orderBy('updated_at')->get();
-        return view('art.index',compact('bids'));
+        if(request()->has('ending')){
+            if(request('ending')==='soonest'){
+                $bids = DB::table('bids')->where('deleted_at',NULL)->where('approved',1)->orderBy('end_date','ASC')->get();
+
+            }
+            if(request('ending')==='latest'){
+                $bids = DB::table('bids')->where('deleted_at',NULL)->where('approved',1)->orderBy('end_date','DESC')->get();
+
+            }
+
+        }
+        elseif (request()->has('new_auctions')){
+            $bids = DB::table('bids')->where('deleted_at',NULL)->where('approved',1)->orderBy('updated_at','DESC')->get();
+
+        }
+//        elseif (request()->has('popular_auctions')){
+//            //TODO count bieding table and order by most popular
+//           // $bids = DB::table('bids')->with('bieding')->where('deleted_at',NULL)->where('approved',1)->orderBy('updated_at','DESC')->get();
+//
+//        }
+        else{
+            $bids = DB::table('bids')->where('deleted_at',NULL)->where('approved',1)->orderBy('updated_at')->get();
+
+        }
+
+       return view('art.index',compact('bids'));
     }
     public function add(){
         return view('art/add');
