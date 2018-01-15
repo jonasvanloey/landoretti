@@ -13,19 +13,19 @@
         <div class="wrapper">
             <div class="row">
                 <div class="col-xs-12">
-                    <h1>How does it work?</h1>
+                    <h1>{{trans('homepage.title')}}</h1>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-4 col-lg-4">
                     <div class="icon"><span class="glyphicon glyphicon-ok"></span></div>
-                    <h3>sign up</h3>
+                    <h3>{{trans('homepage.sign_up')}}</h3>
                 </div>
                 <div class="col-xs-4 col-lg-4"><div class="icon"><span class="glyphicon glyphicon-pencil"></span></div>
-                    <h3>make deals</h3>
+                    <h3>{{trans('homepage.make_deals')}}</h3>
                 </div>
                 <div class="col-xs-4 col-lg-4"><div class="icon"><span></span></div>
-                    <h3>everybody happy</h3>
+                    <h3>{{trans('homepage.everybody_happy')}}</h3>
                 </div>
             </div>
         </div>
@@ -35,7 +35,7 @@
         <div class="wrapper">
             <div class="ro">
                 <div class="col-lg-12">
-                    <h1>Most popular this week <span></span></h1>
+                    <h1>{{trans('homepage.pop')}}<span></span></h1>
                 </div>
             </div>
         </div>

@@ -11,13 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home/index');
-});
+
 Route::get('/isearch', function () {
     return view('Search/index');
 });
 Route::get('/myauctions', 'auctionController@index');
+Route::get('/profile', 'profileController@index');
 Route::get('/art','ArtController@index');
 Route::get('/watchlist','watchlistController@index');
 Route::get('/art/add','ArtController@add');
@@ -31,4 +30,19 @@ Route::get('/watchlist/deleteall','watchlistController@deleteall');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(
+    [
+        'prefix' => LaravelLocalization::setLocale(),
+        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+    ],
+    function()
+    {
+        /** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
+        Route::get('/home', 'HomeController@index')->name('home');
+
+        Route::get('/', function () {
+            return view('home/index');
+        });
+    });
+/** OTHER PAGES THAT SHOULD NOT BE LOCALIZED **/

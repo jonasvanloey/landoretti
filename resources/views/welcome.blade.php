@@ -49,8 +49,8 @@
                 <li><a href="{{url('register')}}"><span></span>Register</a></li>
                 @else
                     <li><a href="/watchlist"><span></span>watchlist</a></li>
-                    <li><a href="#"><span></span>profile</a></li>
-                    <li><a href="#"><span></span>logout</a></li>
+                    <li><a href="/profile"><span></span>profile</a></li>
+                    <li><a href="{{url('logout')}}"><span></span>logout</a></li>
                     @endguest
                 <div class="cfx"></div>
             </ul>
@@ -73,9 +73,13 @@
 
             <div class="lang">
                 <ul>
-                    <li><a href="">NL</a></li>
-                    <li><a href="">FR</a></li>
-                    <li><a href="">EN</a></li>
+                    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                        <li>
+                            <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                {{ $properties['abr'] }}
+                            </a>
+                        </li>
+                    @endforeach
                     <div class="cfx"></div>
                 </ul>
             </div>
@@ -208,9 +212,13 @@
 
             <div class="lang">
                 <ul>
-                    <li><a href="">NL</a></li>
-                    <li><a href="">FR</a></li>
-                    <li><a href="">EN</a></li>
+                    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                        <li>
+                            <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                {{ $properties['abr'] }}
+                            </a>
+                        </li>
+                    @endforeach
                     <div class="cfx"></div>
                 </ul>
             </div>
