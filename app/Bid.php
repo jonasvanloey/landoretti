@@ -10,7 +10,7 @@ class Bid extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'end_date','title','image_path','buyout_price','min_est_price','max_est_price','description','condition','origin','year','width','height','depth'
+        'end_date','title','media','image_path','buyout_price','min_est_price','max_est_price','description','condition','origin','year','width','height','depth'
     ];
     protected $dates = ['deleted_at'];
     public function biedings(){

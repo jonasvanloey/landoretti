@@ -35,6 +35,7 @@ class CreateBidsTable extends Migration
             $table->string('optional_image_path')->nullable();
             $table->string('auction_title');
             $table->string('style');
+            $table->string('media');
             $table->string('origin');
             $table->softDeletes();
             $table->timestamps();

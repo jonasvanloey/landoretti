@@ -29,6 +29,7 @@ Route::get('/watchlist/delete','watchlistController@delete');
 Route::get('/watchlist/deleteall','watchlistController@deleteall');
 
 Auth::routes();
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 
 Route::group(

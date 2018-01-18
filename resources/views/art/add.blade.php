@@ -218,6 +218,17 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    {!!  Form::label('media','media:',['class'=> 'col-md-3 ']) !!}
+                    <div class="col-md-7 ">
+                        {!! Form::select('media', ['Design' => 'Design', 'Paintings and Works on Paper' => 'Paintings and Works on Paper', 'Photographs' => 'Photographs','Prints and Multiples'=>'Prints and Multiples','Sculpture'=>'Sculpture'], null, ['placeholder' => 'media']) !!}
+                        @if ($errors->has('media'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('media') }}</strong>
+                                    </span>
+                        @endif
+                    </div>
+                </div>
+                <div class="form-group">
                     {!!  Form::label('title','title:',['class'=> 'col-md-3 ']) !!}
                     <div class="col-md-7 ">
                         {!! Form::text('title',null,['class'=>'form-control']) !!}

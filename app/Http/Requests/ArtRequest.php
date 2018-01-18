@@ -26,6 +26,7 @@ class ArtRequest extends FormRequest
         return [
             'title'=>"required|string|max:255",
             'style'=>"required|string|max:255",
+            'media'=>"required|string|max:255",
             'min_est_price'=>"required|numeric",
             'max_est_price'=>"required|numeric",
             'buyout_price'=>"required|numeric",
