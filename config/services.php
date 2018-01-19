@@ -15,8 +15,8 @@ return [
     */
 
     'mailgun' => [
-        'domain' => env('MAILGUN_DOMAIN'),
-        'secret' => env('MAILGUN_SECRET'),
+        'domain' => 'www.webdev.local',
+        'secret' => 'key-3ab308353e759fb02a6c4a0678d2260e',
     ],
 
     'ses' => [

@@ -41,7 +41,14 @@
                     <h3>{{$bid->auction_title}}</h3>
                     <p>maker</p>
                     <hr>
-                    <p>{{$bid->end_date}}</p>
+                    <p><?php
+                    $today = \Carbon\Carbon::now();
+                    $days = $today->diffInDays(\Carbon\Carbon::parse($bid->end_date));
+                    $hours = $today->copy()->addDays($days)->diffInHours(\Carbon\Carbon::parse($bid->end_date));
+                    $minutes = $today->copy()->addDays($days)->addHours($hours)->diffInMinutes(\Carbon\Carbon::parse($bid->end_date));
+                    echo $days.' dagen :'.$hours.' uur :'.$minutes.' minuten';
+                    ?></p>
+                    {{--<p>{{\Carbon\Carbon::parse($bid->end_date)->diff($today)->format('%H:%I:%S')}}</p>--}}
                     <hr>
                     <p>vage lorem ipsum</p>
                     <hr>

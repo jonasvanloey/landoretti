@@ -49,7 +49,13 @@
                                     <td class="row">{{$p->auction_title}}</td>
                                     <td >{{$p->max_est_price}}</td>
                                     <td >{{$p->end_date}}</td>
-                                    <td >remaining time</td>
+                                    <td ><?php
+                                        $today = \Carbon\Carbon::now();
+                                        $days = $today->diffInDays(\Carbon\Carbon::parse($p->end_date));
+                                        $hours = $today->copy()->addDays($days)->diffInHours(\Carbon\Carbon::parse($p->end_date));
+                                        $minutes = $today->copy()->addDays($days)->addHours($hours)->diffInMinutes(\Carbon\Carbon::parse($p->end_date));
+                                        echo $days.' dagen :'.$hours.' uur :'.$minutes.' minuten';
+                                        ?></td>
                                 </tr>
                             @endforeach
                         </tbody>
@@ -76,7 +82,13 @@
                             <td class="row">{{$r->auction_title}}</td>
                             <td >{{$r->max_est_price}}</td>
                             <td >{{$r->end_date}}</td>
-                            <td >remaining time</td>
+                            <td ><?php
+                                $today = \Carbon\Carbon::now();
+                                $days = $today->diffInDays(\Carbon\Carbon::parse($r->end_date));
+                                $hours = $today->copy()->addDays($days)->diffInHours(\Carbon\Carbon::parse($r->end_date));
+                                $minutes = $today->copy()->addDays($days)->addHours($hours)->diffInMinutes(\Carbon\Carbon::parse($r->end_date));
+                                echo $days.' dagen :'.$hours.' uur :'.$minutes.' minuten';
+                                ?></td>
                         </tr>
                     @endforeach
 
@@ -100,7 +112,13 @@
                             <td class="row">{{$a->auction_title}}</td>
                             <td >{{$a->max_est_price}}</td>
                             <td >{{$a->end_date}}</td>
-                            <td >remaining time</td>
+                            <td ><?php
+                                $today = \Carbon\Carbon::now();
+                                $days = $today->diffInDays(\Carbon\Carbon::parse($a->end_date));
+                                $hours = $today->copy()->addDays($days)->diffInHours(\Carbon\Carbon::parse($a->end_date));
+                                $minutes = $today->copy()->addDays($days)->addHours($hours)->diffInMinutes(\Carbon\Carbon::parse($a->end_date));
+                                echo $days.' dagen :'.$hours.' uur :'.$minutes.' minuten';
+                                ?></td>
                         </tr>
                     @endforeach
 
@@ -124,7 +142,13 @@
                             <td class="row">{{$e->auction_title}}</td>
                             <td >{{$e->max_est_price}}</td>
                             <td >{{$e->end_date}}</td>
-                            <td >x</td>
+                            <td ><?php
+                                $today = \Carbon\Carbon::now();
+                                $days = $today->diffInDays(\Carbon\Carbon::parse($a->end_date));
+                                $hours = $today->copy()->addDays($days)->diffInHours(\Carbon\Carbon::parse($a->end_date));
+                                $minutes = $today->copy()->addDays($days)->addHours($hours)->diffInMinutes(\Carbon\Carbon::parse($a->end_date));
+                                echo $days.' dagen :'.$hours.' uur :'.$minutes.' minuten';
+                                ?></td>
                         </tr>
                     @endforeach
                     </tbody>
@@ -147,7 +171,13 @@
                             <td class="row">{{$s->auction_title}}</td>
                             <td >{{$s->max_est_price}}</td>
                             <td >{{$s->end_date}}</td>
-                            <td >x</td>
+                            <td ><?php
+                                $today = \Carbon\Carbon::now();
+                                $days = $today->diffInDays(\Carbon\Carbon::parse($s->end_date));
+                                $hours = $today->copy()->addDays($days)->diffInHours(\Carbon\Carbon::parse($s->end_date));
+                                $minutes = $today->copy()->addDays($days)->addHours($hours)->diffInMinutes(\Carbon\Carbon::parse($s->end_date));
+                                echo $days.' dagen :'.$hours.' uur :'.$minutes.' minuten';
+                                ?></td>
                         </tr>
                     @endforeach
                     </tbody>

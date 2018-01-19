@@ -13,6 +13,10 @@ class ArtController extends Controller
 {
     public function index(){
         $q=Bid::query();
+        if(request()->has('find')){
+            $str = request('find');
+            $q->where('auction_title','LIKE','%'.$str.'%');
+        }
         if(request()->has('style')){
            $style = request('style');
 //            var_dump($style);
@@ -97,7 +101,7 @@ class ArtController extends Controller
                         $newdatef2 = date ( 'Y-m-j' , $newdate );
 
 
-                        $query->orWhereBetween('end_date',[$newdate2,$newdatef2]);;
+                        $query->orWhereBetween('end_date',[$today,$newdatef2]);;
                     }
                     if($e==='newly_listed'){
                         $query->orderBy('updated_at','DESC');
@@ -127,11 +131,13 @@ class ArtController extends Controller
             $q->orderBy('updated_at','DESC')->get();
 
         }
-//        elseif (request()->has('popular_auctions')){
-//            //TODO count bieding table and order by most popular
-//           // $bids = DB::table('bids')->with('bieding')->where('deleted_at',NULL)->where('approved',1)->orderBy('updated_at','DESC')->get();
-//
-//        }
+        elseif (request()->has('popular_auctions')){
+
+           $q->whereHas('biedings',function($query){
+               $query->select(DB::raw('count(*) as c'))->groupBy('bid_id')->orderBy('c');
+           });
+
+        }
         else{
             $bids = DB::table('bids')->where('deleted_at',NULL)->where('approved',1)->orderBy('updated_at')->get();
 

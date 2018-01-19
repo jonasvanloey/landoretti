@@ -38,14 +38,14 @@
                 </div>
                 <div class="col-lg-2">
                     <p>{{$user->email}}</p>
-                    {{--<p>{{$user->tel}}</p>--}}
-                    {{--TODO add telephone to user--}}
+                    <p>{{$user->tel}}</p>
+
                     <p>{{$user->street}}, {{$user->nr}}</p>
                     <p>{{$user->postcode}}, {{$user->city}}</p>
                 </div>
                 <div class="col-lg-2">
                     <p>VAT-number</p>
-                    <p>{{$user->vat_number}}$
+                    <p>{{$user->vat_number}}</p>
                     <p>Account number</p>
                     <p>xxxxx</p>
                 </div>

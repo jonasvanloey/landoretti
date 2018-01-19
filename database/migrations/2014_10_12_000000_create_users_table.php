@@ -18,7 +18,8 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('street');
             $table->string('city');
-            $table->integer('vat_number');
+            $table->string('vat_number');
+            $table->integer('tel');
             //$table->integer('account_number');
             $table->integer('nr');
             $table->integer('postcode');

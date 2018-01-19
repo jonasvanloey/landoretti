@@ -180,7 +180,10 @@
             </div>
             <div class="col-lg-3">
                 <h3>Find hat you need</h3>
-                <input type="text">
+                {!!  Form::open(['url' => '/art','method' => 'GET']) !!}
+                {!! Form::input('text','find') !!}
+                {!! Form::submit('Zoek') !!}
+                {!! Form::close() !!}
                 <h3>Contact</h3>
                 <ul>
                     <li>Landoretti ART</li>

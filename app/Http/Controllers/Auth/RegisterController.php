@@ -55,6 +55,7 @@ class RegisterController extends Controller
             'city' => 'required|string|max:255',
             'nr' => 'required|integer',
             'postcode' => 'required|integer',
+            'tel' => 'required|string',
             'vat_number' => 'required|string',
         ]);
     }
@@ -73,6 +74,7 @@ class RegisterController extends Controller
             'street' => $data['street'],
             'city' => $data['city'],
             'nr' => $data['nr'],
+            'tel' => $data['tel'],
             'postcode' => $data['postcode'],
             'vat_number' => $data['vat_number'],
             'password' => bcrypt($data['password']),

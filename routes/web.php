@@ -41,9 +41,10 @@ Route::group(
     {
         /** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
         Route::get('/home', 'HomeController@index')->name('home');
-
-        Route::get('/', function () {
-            return view('home/index');
-        });
+        Route::get('/', 'HomeController@index')->name('home');
+//
+//        Route::get('/', function () {
+//            return view('home/index');
+//        });
     });
 /** OTHER PAGES THAT SHOULD NOT BE LOCALIZED **/

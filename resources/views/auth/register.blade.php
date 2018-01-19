@@ -78,9 +78,22 @@
                             <div class="col-md-6">
                                 <input id="nr"class="form-control" name="nr" required>
 
-                                @if ($errors->has('street'))
+                                @if ($errors->has('nr'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('nr') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group{{ $errors->has('tel') ? ' has-error' : '' }}">
+                            <label for="tel" class="col-md-4 control-label">telephone number</label>
+
+                            <div class="col-md-6">
+                                <input id="tel"class="form-control" name="tel" required>
+
+                                @if ($errors->has('tel'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('tel') }}</strong>
                                     </span>
                                 @endif
                             </div>

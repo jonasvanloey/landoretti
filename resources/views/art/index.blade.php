@@ -121,7 +121,7 @@
                     <div class="col-lg-8">
                         <h4>{{$bid->auction_title}}</h4>
                         <p>€<h4>{{$bid->min_est_price}}</h4> - €<h4>{{$bid->max_est_price}}</h4></p>
-                        <a href="/art/{{$bid->id}}"><button>Details...</button></a>
+                        <a href="/art/{{$bid->id}}"><button>Art details</button></a>
                         <a href="/art/watchlist/{{$bid->id}}"><button><span class="glyphicon glyphicon-eye-open"></span> add to watchlist</button></a>
                     </div>
                 </div>

@@ -35,7 +35,18 @@
         <div class="wrapper">
             <div class="ro">
                 <div class="col-lg-12">
-                    <h1>{{trans('homepage.pop')}}<span></span></h1>
+                    <h2>{{trans('homepage.pop')}}<span></span></h2>
+                    @foreach($bids as $b)
+                        <div class="col-lg-3">
+
+                            <a href="/art/{{$b->id}}">
+                                <img class="prodimage" src="{!!   asset('storage/bids/' .$b->image_path) !!}" alt="{{$b->auction_title}}" >
+                                <h4>{{$b->auction_title}}</h4>
+                            </a>
+                        </div>
+                        @endforeach
+
+
                 </div>
             </div>
         </div>

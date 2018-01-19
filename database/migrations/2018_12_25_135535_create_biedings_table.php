@@ -18,6 +18,7 @@ class CreateBiedingsTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->integer('bid_id')->unsigned();
             $table->float('bid_price');
+            $table->boolean('is_winner')->default(0);
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('bid_id')->references('id')->on('bids')->onDelete('cascade');

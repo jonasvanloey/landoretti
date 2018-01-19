@@ -13,6 +13,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
+        Commands\bidCommand::class
         //
     ];
 
@@ -24,6 +25,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
+        $schedule->command('chack_bids')->daily();
         // $schedule->command('inspire')
         //          ->hourly();
     }
