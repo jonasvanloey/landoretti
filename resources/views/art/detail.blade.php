@@ -57,10 +57,17 @@
                     <a href="/art/{{$bid->id}}/buy">
                         <h5>Buy now for €{{$bid->buyout_price}}</h5>
                     </a>
+                    @if($isbid)
                     {!!  Form::open(['url' => '/art/'.$bid->id.'/bid','method' => 'post']) !!}
-                    {!! Form::text('bid',null,['class'=>'form-control']) !!}
+                    {!! Form::text('bid','no bid has been made yet',['class'=>'form-control']) !!}
                     {!! Form::submit('Bid now') !!}
                     {!! Form::close() !!}
+                    @else
+                        {!!  Form::open(['url' => '/art/'.$bid->id.'/bid','method' => 'post']) !!}
+                        {!! Form::text('bid',$highest[0]->bid_price,['class'=>'form-control']) !!}
+                        {!! Form::submit('Bid now') !!}
+                        {!! Form::close() !!}
+                        @endif
                     <a href="/art/watchlist/{{$bid->id}}"><span class="glyphicon glyphicon-eye-open"></span> add to watchlist</a>
 
                 </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Bid;
+use App\Bieding;
 use App\Http\Requests\ArtRequest;
 use App\Watchlist;
 use Illuminate\Http\Request;
@@ -209,7 +210,16 @@ class ArtController extends Controller
 
     }
     public function detail(Bid $bid){
-        return view('art.detail',compact('bid'));
+        $available=Bieding::where('bid_id',$bid->id)->get()->values();
+        $isbid=false;
+        if(count($available)===0){
+            $isbid=true;
+        }
+        $highest= Bieding::where('bid_id',$bid->id)->orderBy('bid_price','DESC')->take(1)->get();
+
+
+//        var_dump($isbid);
+        return view('art.detail',compact('bid','highest','isbid'));
     }
     //
 }
